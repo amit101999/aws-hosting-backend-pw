@@ -1,0 +1,32 @@
+name: "deploy to aws"
+
+# trigger the flows from the github UI
+on: workflow_dispatch
+
+jobs:
+    deploy:
+        runs-on: self-hosted
+        steps:
+            - name : "setup node js"
+              uses : actions/setup-node@v4
+              with:
+                node-version: '22'
+
+            - name: "checkout code"
+              uses: actions/checkout@v2
+
+            - name: "install dependecies"
+              run : npm install
+
+            - name: "install pm2"
+              run: npm install pm2 -g
+              
+            # - name: 'run tests'
+            #   run: npm test
+
+            - name: "deploy to aws"
+              run: pm2 start ./index.js
+             
+              
+
+
