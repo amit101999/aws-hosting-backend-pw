@@ -23,9 +23,6 @@ jobs:
               
             # - name: 'run tests'
             #   run: npm test
-
-            - name: "deploy to aws"
-              run: pm2 start ./index.js
              
               
 
