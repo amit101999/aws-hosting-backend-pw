@@ -1,4 +1,6 @@
 const express = require('express')
+const dotenv = require('dotenv')
+dotenv.config()
 
 const app = express();
 
@@ -6,6 +8,6 @@ app.get('/', (req, res) => {
     res.send("hello wordl sads")
 })
 
-app.listen(8000, () => {
-    console.log('server started')
+app.listen(process.env.PORT, () => {
+    console.log(`server started ${process.env.PORT}`)
 })
