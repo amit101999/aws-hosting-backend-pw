@@ -5,7 +5,7 @@ dotenv.config()
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send("hello wordl sads")
+    res.status(200).json({ msg: "hello aws" })
 })
 
 app.listen(process.env.PORT, () => {
