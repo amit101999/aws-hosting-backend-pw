@@ -17,6 +17,9 @@ jobs:
 
             - name: "install dependecies"
               run : npm install
+            
+            - name: "deploy to aws"
+              run: pm2 restart server
 
             # - name: "install pm2"
             #   run: npm install pm2 -g
@@ -24,8 +27,7 @@ jobs:
             # - name: 'run tests'
             #   run: npm test
 
-            - name: "deploy to aws"
-              run: pm2 restart server
+            
              
               
 
